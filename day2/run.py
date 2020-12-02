@@ -17,7 +17,7 @@ class PasswordPolicy:
         return self.num1 <= self.password.count(self.search) <= self.num2
 
     def check_part2(self):
-        # Use a nor operator to identify good passwords
+        # Use a xor operator to identify good passwords
         return (self.password[self.num1-1] == self.search) ^ (self.password[self.num2-1] == self.search)
 
 policies = [PasswordPolicy(line) for line in open(f'{os.path.dirname(__file__)}/input.txt', 'r').readlines()]

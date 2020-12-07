@@ -29,11 +29,8 @@ def part1(groups):
 def part2(groups):
     tally = 0
     for group in groups:
-        if len(group) == 1:
-            tally += len(group[0])
-            continue
         sets = [set(g) for g in group]
-        intersection = sets[0].intersection(*sets)
+        intersection = set.intersection(*sets)
         tally += len(intersection)
     return tally
 
